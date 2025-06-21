@@ -15,7 +15,7 @@ namespace NextCloudSelenium
     public class Login
     {
         IWebDriver driver;
-        string pswd = String.Empty;
+        string url = String.Empty, pswd = String.Empty;
 
         [SetUp]
         public void StartBrowser()
@@ -23,12 +23,13 @@ namespace NextCloudSelenium
             driver = new ChromeDriver();
             DotNetEnv.Env.TraversePath().Load();
             pswd = Env.GetString("MY_PASSWORD");
+            url = Env.GetString("ENVIRONMENT");
         }
 
         [Test]
         public void Test()
         {
-            driver.Url = "http://localhost:81/login?clear=1";
+            driver.Url = url;
 
             IWebElement usernameInputField = driver.FindElement(By.ClassName("input-field"));
             usernameInputField.Click();
@@ -42,6 +43,9 @@ namespace NextCloudSelenium
 
             IWebElement loginButton = driver.FindElement(By.CssSelector(".button-vue.button-vue--size-normal.button-vue--icon-and-text.button-vue--vue-primary.button-vue--wide"));
             loginButton.Click();
+            string title = driver.Title;
+
+            Assert.That(title, Is.EqualTo("Dashboard - Nextcloud"));
         }
 
         [TearDown]
