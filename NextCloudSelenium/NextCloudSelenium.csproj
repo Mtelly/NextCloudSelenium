@@ -20,7 +20,6 @@
     <Folder Include="Drivers\" />
     <Folder Include="Reports\" />
     <Folder Include="Utilities\" />
-    <Folder Include="Tests\" />
   </ItemGroup>
 
 </Project>
