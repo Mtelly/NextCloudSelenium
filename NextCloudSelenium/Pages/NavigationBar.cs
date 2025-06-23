@@ -25,6 +25,11 @@ namespace NextCloudSelenium.Pages
         private IWebElement calendar => _driver.FindElement(By.XPath("//*[@id=\"header\"]/div[1]/nav/ul/li[8]/a/span[2]"));
         private IWebElement notes => _driver.FindElement(By.XPath("//*[@id=\"header\"]/div[1]/nav/ul/li[9]/a/span[2]"));
 
+        public void ClickNextcloud()
+        {
+            nextcloud.Click();
+        }
+        
         public void ClickTalk()
         {
             talk.Click();
@@ -38,6 +43,31 @@ namespace NextCloudSelenium.Pages
         public void ClickPhotos()
         {
             photos.Click();
+        }
+
+        public void ClickActivity()
+        {
+            activity.Click();
+        }
+
+        public void ClickMail()
+        {
+            mail.Click();
+        }
+
+        public void ClickContacts()
+        {
+            contacts.Click();
+        }
+
+        public void ClickCalendar()
+        {
+            calendar.Click();
+        }
+
+        public void ClickNotes()
+        {
+            notes.Click();
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace NextCloudSelenium.Tests
 {
     [TestFixture]
-    public class Login
+    public class LoginTest
     {
         IWebDriver driver;
         LoginPage loginPage;
