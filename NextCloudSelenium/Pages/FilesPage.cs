@@ -39,5 +39,11 @@ namespace NextCloudSelenium.Pages
             FolderNameTextBox.SendKeys(folderName);
             CreateNewFolderButton.Click();
         }
+
+        public void SelectFolder(string folderName = "Selenium Test")
+        {
+            IWebElement seleniumTest = _driver.FindElement(By.CssSelector($"[title=\"Open folder {folderName}\"]"));
+            seleniumTest.Click();
+        }
     }
 }

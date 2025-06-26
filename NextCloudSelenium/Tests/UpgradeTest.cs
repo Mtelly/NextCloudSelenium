@@ -24,6 +24,7 @@ namespace NextCloudSelenium.Tests
         [SetUp]
         public void StartBrowser()
         {
+            //TODO Run headless mode via runsettings. Potentially extract into Factory pattern.
             driver = new ChromeDriver();
             filesPage = new FilesPage(driver);
             navigationPage = new NavigationBar(driver);
@@ -43,6 +44,7 @@ namespace NextCloudSelenium.Tests
             filesPage.CreateNewFolder();
             IWebElement cyFiles = driver.FindElement(By.CssSelector("[data-cy-files-list-row-name=\"Documents\"]"));
             Assert.That(driver.Title, Is.EqualTo("All files - Nextcloud"));
+            filesPage.SelectFolder();
         }
     }
 }
