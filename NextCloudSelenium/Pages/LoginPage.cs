@@ -28,6 +28,7 @@ namespace NextCloudSelenium.Pages
             Username.Clear();
             Username.SendKeys(username);
         }
+
         public void EnterPassword(string password)
         {
             PasswordInputField.Click();

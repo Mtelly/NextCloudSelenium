@@ -37,12 +37,12 @@ namespace NextCloudSelenium.Tests
         }
 
         [Test]
-        public void TalkTest()
+        public void FolderTest()
         {
             navigationPage.ClickFiles();
             filesPage.CreateNewFolder();
             IWebElement cyFiles = driver.FindElement(By.CssSelector("[data-cy-files-list-row-name=\"Documents\"]"));
-            Assert.That(driver.Title, Is.EqualTo("Talk - Nextcloud"));
+            Assert.That(driver.Title, Is.EqualTo("All files - Nextcloud"));
         }
     }
 }
